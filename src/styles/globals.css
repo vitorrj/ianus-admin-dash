@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-bg-body text-text-main;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-gray-200/80 shadow-sm ring-1 ring-gray-900/[0.04];
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:border-gray-300/80 hover:ring-gray-900/[0.06];
+  }
+  .btn {
+    @apply px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 flex items-center gap-1.5 cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-gray-900 text-white shadow-button hover:bg-gray-800;
+  }
+  .btn-secondary {
+    @apply bg-white border border-gray-200 text-text-main hover:bg-gray-50 hover:border-gray-300;
+  }
+  .btn-danger {
+    @apply bg-action-block text-white hover:bg-red-600;
+  }
+  .input {
+    @apply w-full px-3 py-1.5 rounded-lg border border-gray-200 bg-gray-50 text-xs text-text-main outline-none transition-all duration-150 hover:bg-gray-100 hover:border-gray-300 focus:bg-white focus:border-gray-400 focus:ring-1 focus:ring-gray-200;
+  }
+  .select {
+    @apply input appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23555' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.2em 1.2em;
+    padding-right: 2rem;
+  }
+  .badge {
+    @apply px-2 py-0.5 rounded-md text-2xs font-semibold uppercase;
+  }
+  .badge-critical {
+    @apply bg-severity-critical-bg text-severity-critical-text;
+  }
+  .badge-high {
+    @apply bg-severity-high-bg text-severity-high-text;
+  }
+  .badge-medium {
+    @apply bg-severity-medium-bg text-severity-medium-text;
+  }
+  .badge-low {
+    @apply bg-severity-low-bg text-severity-low-text;
+  }
+  .table-container {
+    @apply bg-white rounded-xl border border-gray-200/80 overflow-hidden shadow-sm ring-1 ring-gray-900/[0.04];
+  }
+  .table {
+    @apply w-full border-collapse;
+  }
+  .table th {
+    @apply text-left px-2 py-2 bg-gray-50 text-text-secondary whitespace-nowrap text-[10px] font-semibold uppercase tracking-wide border-b border-gray-100;
+  }
+  .table th:first-child {
+    @apply pl-3;
+  }
+  .table th:last-child {
+    @apply pr-3;
+  }
+  .table td {
+    @apply px-2 py-2 border-b border-gray-50 text-xs align-top;
+  }
+  .table td:first-child {
+    @apply pl-3;
+  }
+  .table td:last-child {
+    @apply pr-3;
+  }
+  .table tbody tr {
+    @apply transition-colors duration-100;
+  }
+  .table tbody tr:hover {
+    @apply bg-gray-50;
+  }
+  .table tbody tr:last-child td {
+    @apply border-b-0;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-2xs font-medium bg-gray-100 text-text-main border border-gray-200;
+  }
+  .mono {
+    @apply font-mono text-text-main;
+  }
+  .live-indicator {
+    @apply inline-flex items-center gap-1.5 px-2 py-1 rounded-lg bg-green-100 text-green-800 text-xs font-semibold uppercase;
+  }
+  .live-dot {
+    @apply w-2 h-2 bg-chart-green rounded-full animate-pulse-slow;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
